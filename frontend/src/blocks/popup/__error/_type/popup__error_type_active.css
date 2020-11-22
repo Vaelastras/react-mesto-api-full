@@ -1,0 +1,4 @@
+.popup__error_type_active {
+  opacity: 1;
+  visibility: visible;
+}

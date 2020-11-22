@@ -1,0 +1,9 @@
+.profile__row {
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .profile__row{
+    align-self: center;
+  }
+}

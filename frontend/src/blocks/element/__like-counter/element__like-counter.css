@@ -1,0 +1,9 @@
+.element__like-counter {
+  max-width: 9px;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  align-self: center;
+  margin-top: 3px;
+  color: #000;
+}

@@ -1,0 +1,6 @@
+.header__info_type_mobile {
+	align-items: center;
+	transform: scaleY(1);
+	transition:transform .3s linear;
+	transform-origin: top;
+}

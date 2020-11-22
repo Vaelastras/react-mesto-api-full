@@ -1,0 +1,10 @@
+.header__routes {
+	align-self: flex-end;
+}
+
+@media(min-width: 0px) and (max-width: 320px) {
+	.header__routes {
+		display: none;
+	}
+	
+}

@@ -1,0 +1,23 @@
+.profile__avatar {
+  min-width: 125px;
+  height: 125px;
+  /* background-image: url(../../../images/avatar.jpeg); */
+  border-radius: 50%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  opacity: 1;
+  position: relative;
+}
+
+/* .profile__avatar:hover {
+  opacity: 0.6;
+  transition: opacity, .6s, ease-in-out;
+} */
+
+@media (max-width:700px) {
+  .profile__avatar {
+    margin: 38px 0px 10px 0px;
+  }
+}

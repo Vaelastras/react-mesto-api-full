@@ -1,0 +1,20 @@
+.profile__job-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #FFFFFF;
+  margin: 0px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 350px;
+}
+
+@media (max-width: 700px) {
+  .profile__job-description {
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    max-width: none;
+  }
+}

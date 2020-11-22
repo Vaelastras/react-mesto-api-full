@@ -1,0 +1,16 @@
+.header__info {
+	margin-top: 6px;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+@media screen and (max-width: 320px) {
+	.header__info {
+		justify-content: center;
+		flex-direction: column;
+		border-bottom: #545454 1px solid;
+	}
+}
+

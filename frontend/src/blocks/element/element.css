@@ -1,0 +1,16 @@
+@import url(__photo/element__photo.css);
+@import url(__row/element__row.css);
+@import url(__title/element__title.css);
+@import url(__like-section/element__like-section.css);
+@import url(__like-counter/element__like-counter.css);
+@import url(__like/element__like.css);
+@import url(__like/_active/element__like_type_active.css);
+@import url(__trash/element__trash.css);
+@import url(__trash/_type/element__trash_type_active.css);
+
+.element {
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  max-height: 361px;
+}

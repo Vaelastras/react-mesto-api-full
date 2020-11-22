@@ -1,0 +1,40 @@
+{
+  "name": "mesto-backend",
+  "version": "1.0.0",
+  "description": "backend app for mesto project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaelastras/express-mesto.git"
+  },
+  "keywords": [
+    "backend",
+    "express",
+    "mesto",
+    "node.js"
+  ],
+  "author": "Alexey Belov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vaelastras/express-mesto/issues"
+  },
+  "homepage": "https://github.com/Vaelastras/express-mesto#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "celebrate": "^13.0.4",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.4"
+  }
+}

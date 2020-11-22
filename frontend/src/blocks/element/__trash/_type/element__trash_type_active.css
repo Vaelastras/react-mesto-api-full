@@ -1,0 +1,11 @@
+.element__trash_type_active{
+  display:block;
+}
+
+
+.element__trash_type_active:hover {
+  cursor: pointer;
+  opacity: .6;
+  transform: scale(1.5);
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}

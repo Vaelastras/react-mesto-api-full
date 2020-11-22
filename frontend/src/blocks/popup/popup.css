@@ -1,0 +1,35 @@
+@import url(__container/popup__container.css);
+@import url(__close/popup__close.css);
+@import url(__title/popup__title.css);
+@import url(__input/popup__input.css);
+@import url(__inputs/popup__inputs.css);
+@import url(__submit/popup__submit.css);
+
+@import url(__image-container/popup__image-container.css);
+@import url(__image/popup__image.css);
+@import url(__image-title/popup__image-title.css);
+@import url(__error/popup__error.css);
+@import url(__error/_type/popup__error_type_active.css);
+@import url(__submit/_disabled/popup__submit_disabled.css);
+@import url(__input/_type/popup__input_type_error.css);
+@import url(./__wrapper/popup__wrapper.css);
+@import url(./__infostatus/popup__infostatus.css);
+@import url(./__text/popup__text.css);
+@import url(./__login-confirm/popup__login-confirm.css);
+@import url(./__link/popup__link.css);
+
+.popup {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-content: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 10;
+  /*transition: visibility .3s, opacity .3s linear;*/
+}

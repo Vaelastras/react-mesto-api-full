@@ -1,0 +1,28 @@
+.header__dropdown {
+	display: none;
+	background-image: url("../../../images/menu-dropdown.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	width: 24px;
+	height: 24px;
+	border: none;
+	padding: 3px 0px;
+	background-color: black;
+	align-self: flex-end;
+}
+
+.header__dropdown:hover {
+	cursor: pointer;
+	opacity: .6;
+	transition: opacity .2s linear;
+}
+
+@media screen and (max-width: 320px) {
+	.header__dropdown {
+		display: block;
+	}
+	.header__dropdown:focus {
+		outline: none;
+	}
+}

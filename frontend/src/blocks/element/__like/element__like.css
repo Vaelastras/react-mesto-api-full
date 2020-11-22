@@ -1,0 +1,19 @@
+.element__like {
+  background-image: url(../../../images/icon_like_unset.svg);
+  width: 20px;
+  height: 18px;
+  background-size: contain;
+  background-position: center;
+  background-color: #FFF;
+  background-repeat: no-repeat;
+  border: none;
+}
+
+.element__like:hover {
+  cursor: pointer;
+  opacity: .6;
+}
+
+.element__like:focus {
+  outline: none;
+}
