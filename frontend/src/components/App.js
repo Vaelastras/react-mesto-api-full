@@ -153,11 +153,18 @@ function App () {
     console.log(card, 'hf,jnfq ,kzlnm!')
 
     const isLiked = card.likes.find(i => i === currentUser._id); // tyt false
+    console.log('card.likes',card.likes)
+    console.log('currentUser._id',currentUser._id)
+    console.log('isLiked',isLiked)
+
+
+
 
     if (!isLiked) {
       api.putLike({cardId: card._id})
         .then((newCard) => {
           const newCards = cards.map((c) => c._id === card._id ? newCard : c)
+
           setCards(newCards)
         })
         .catch(err => console.log(err));
@@ -197,7 +204,7 @@ function App () {
   function handleAddPlaceSubmit(item){
     api.postUserCard(item)
       .then((res) => {
-        setCards([...cards, res]);
+        setCards([...cards, res.card]);
         closeAllPopups()
         }
       )

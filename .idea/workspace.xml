@@ -20,28 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82ee82b8-157c-4695-9295-314a40ca6c88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/middlewares/logger.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/middlewares/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middlewares/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/cards.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__container/popup__container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddPlacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddPlacePopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/utils/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/Api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606039092824</updated>
-      <workItem from="1606039093945" duration="54140000" />
+      <workItem from="1606039093945" duration="56699000" />
     </task>
     <servers />
   </component>

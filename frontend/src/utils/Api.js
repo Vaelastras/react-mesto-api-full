@@ -81,7 +81,7 @@
       method: "PUT",
       headers: this._headers,
     })
-      .then((res) => this._handleResponse);
+      .then((res) => this._handleResponse(res));
   };
 
 
