@@ -47,15 +47,42 @@ function App () {
 
   const history = useHistory();
 
+  const tokenCheck = () => {
+    const jwt = localStorage.getItem('jwt');
+
+    if (jwt) {
+      auth.getContent(jwt)
+        .then((res) => {
+          if (res) {
+            setEmail(res.email);
+            setLoggedIn(true);
+            history.push('./');
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          history.push('./sign-in');
+        });
+    }
+  }
+
+  useEffect(() => {
+    tokenCheck()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+
   // effects block code
   useEffect(() => {
-    api.getInfoFromServer()
-      .then(([userData, initialCards]) => {
-        setCurrentUser(userData)
-        setCards(initialCards)
-    })
-    .catch(err => console.log(err));
-  }, [])
+    if (loggedIn){
+      api.getInfoFromServer()
+        .then(([userData, initialCards]) => {
+          setCurrentUser(userData)
+          setCards(initialCards)
+      })
+      .catch(err => console.log(err));
+    }
+  }, [loggedIn])
+
   useEffect(()=> {
     document.addEventListener('keydown', handleEscapeClose)
     document.addEventListener("mousedown", handleOverlayClose)
@@ -117,19 +144,25 @@ function App () {
     )
     .catch(err => console.log(err));
   }
+
+
+  // --------- DANGER ZONE!!! ------------------------
+
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+
+    console.log(card, 'hf,jnfq ,kzlnm!')
+
+    const isLiked = card.likes.find(i => i === currentUser._id); // tyt false
 
     if (!isLiked) {
-      api.putLike(card._id)
+      api.putLike({cardId: card._id})
         .then((newCard) => {
           const newCards = cards.map((c) => c._id === card._id ? newCard : c)
           setCards(newCards)
         })
         .catch(err => console.log(err));
-
     } else {
-      api.deleteLike(card._id)
+      api.deleteLike({cardId: card._id})
         .then((newCard) => {
           const newCards = cards.map((c) => c._id === card._id ? newCard : c)
           setCards(newCards)
@@ -137,6 +170,12 @@ function App () {
         .catch(err => console.log(err));
     }
   }
+
+//  --------------- END DANGER ZONE -----------
+
+
+
+
   function handleConfirmCardDelete() {
     const isOwn = cardDelete.owner._id === currentUser._id;
     setIsLoading(true)
@@ -154,6 +193,7 @@ function App () {
     setCardDelete(card);
     handleDeleteCardClick();
   }
+
   function handleAddPlaceSubmit(item){
     api.postUserCard(item)
       .then((res) => {
@@ -203,27 +243,7 @@ const handleRegisterConfirm = (foo) => {
    setLoggedIn(false)
  }
 
-  const tokenCheck = () => {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      auth.getContent(jwt)
-        .then((res) => {
-          if (res) {
-            setEmail(res.data.email);
-            setLoggedIn(true);
-            history.push('./');
-          }
-        })
-        .catch(err => {
-          console.log(err);
-          history.push('./sign-in');
-        });
-    }
-  }
 
-  useEffect(() => {
-    tokenCheck()
-  }, [])
 
 
   return (

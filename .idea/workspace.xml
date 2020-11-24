@@ -20,169 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82ee82b8-157c-4695-9295-314a40ca6c88" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/react-mesto-api-full.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/controllers/cards.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/controllers/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/errors/AuthError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/errors/ConflictError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/errors/ForbiddenError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/errors/NotFoundError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/errors/ValidationError.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/middlewares/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/models/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/cards.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/routes/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/asset-manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/precache-manifest.9c8ee2cba5245163dfaf724b0416e81d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/service-worker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/css/main.2d9820f7.chunk.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/css/main.2d9820f7.chunk.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/js/2.a7907193.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/js/2.a7907193.chunk.js.LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/js/2.a7907193.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/js/main.31913857.chunk.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/js/main.31913857.chunk.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/js/runtime-main.b8dd5a43.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/js/runtime-main.b8dd5a43.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/Inter-Black.09f4068b.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/Inter-Black.e3735483.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/Inter-Medium.7a8cc724.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/Inter-Medium.f6cf0a0b.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/Inter-Regular.4dd66a11.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/Inter-Regular.7c539936.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/add-element.b2fce4ac.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/close-icon.5df32a06.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/edit-pencil.6bfdb354.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/icon-trash.d8078343.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/icon_like_set.5bbb05f7.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/icon_like_unset.83a46f45.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/build/static/media/logo.c6f11019.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/content/content.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__like-counter/element__like-counter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__like-section/element__like-section.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__like/_active/element__like_type_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__like/element__like.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__photo/element__photo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__row/element__row.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__title/element__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__trash/_type/element__trash_type_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/__trash/element__trash.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/element/element.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/elements/elements.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/footer/__copуrigth/footer__copyrigth.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/footer/footer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__button/header__button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__container/header__container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__content/header__content.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__dropdown/_active/header__dropdown_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__dropdown/header__dropdown.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__email/header__email.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__info/_type/header__info_type_mobile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__info/header__info.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__link/header__link.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__logo/header__logo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__routes/header__routes.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__wrapper/_type/header__wrapper_type_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/__wrapper/header__wrapper.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/header/header.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/login/__container/login__container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/login/__input/login__input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/login/__submit/login__submit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/login/__title/login__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/login/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/page/page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__close/popup__close.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__container/popup__container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__error/_type/popup__error_type_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__error/popup__error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__image-container/popup__image-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__image-title/popup__image-title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__image/popup__image.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__infostatus/popup__infostatus.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__input/_type/popup__input_type_error.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__input/popup__input.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__inputs/popup__inputs.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__link/popup__link.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__login-confirm/popup__login-confirm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__submit/_disabled/popup__submit_disabled.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__submit/popup__submit.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__text/popup__text.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__title/popup__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__wrapper/popup__wrapper.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/_active/popup_active.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/popup.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__add-button/profile__add-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__avatar/profile__avatar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__edit-avatar/profile__edit-avatar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__edit-button/profile__edit-button.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__image/profile__image.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__info/profile__info.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__job-description/profile__job-description.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__row/profile__row.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/__title/profile__title.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/profile/profile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/blocks/root/root.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/AddPlacePopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/EditAvatarPopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/EditProfilePopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ImagePopup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/InfoTooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/PopupDelete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/PopupWithForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ProtectedRoute.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Register.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/context/CurrentUserContext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/fonts/Inter-Black.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/fonts/Inter-Black.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/fonts/Inter-Medium.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/fonts/Inter-Medium.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/fonts/Inter-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/fonts/Inter-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/fonts/fonts.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/Fail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/Success.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/add-element.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/avatar.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/close-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/edit-pencil.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/icon-trash.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/icon_like_set.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/icon_like_unset.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/like-vector.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/menu-dropdown.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/images/pencil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/Api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/utils/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/vendor/normalize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/middlewares/logger.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/middlewares/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/middlewares/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/cards.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/cards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/blocks/popup/__container/popup__container.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/__container/popup__container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/blocks/popup/popup.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/blocks/popup/popup.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AddPlacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AddPlacePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/Api.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/Api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/utils/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -200,6 +59,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kdmxvwFsw0LfhKampWZAAGS5oA" />
@@ -212,12 +76,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/frontend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontend" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/backend/errors" />
     </key>
@@ -230,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606039092824</updated>
-      <workItem from="1606039093945" duration="24483000" />
+      <workItem from="1606039093945" duration="54140000" />
     </task>
     <servers />
   </component>
@@ -268,5 +138,13 @@
       <screen x="1440" y="23" width="1920" height="1009" />
     </state>
     <state width="1898" height="274" key="GridCell.Tab.0.right/0.23.1440.877/1440.23.1920.1009@1440.23.1920.1009" timestamp="1606040567100" />
+    <state x="2086" y="282" width="804" height="669" key="find.popup" timestamp="1606164040759">
+      <screen x="1440" y="23" width="1920" height="1009" />
+    </state>
+    <state x="2086" y="282" width="804" height="669" key="find.popup/0.23.1440.877/1440.23.1920.1009@1440.23.1920.1009" timestamp="1606164040759" />
+    <state x="508" y="238" width="670" height="676" key="search.everywhere.popup" timestamp="1606217558983">
+      <screen x="0" y="23" width="1680" height="979" />
+    </state>
+    <state x="508" y="238" width="670" height="676" key="search.everywhere.popup/0.23.1680.979@0.23.1680.979" timestamp="1606217558983" />
   </component>
 </project>

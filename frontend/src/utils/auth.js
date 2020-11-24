@@ -1,4 +1,5 @@
-const baseAuthURL = "https://auth.nomoreparties.co";
+// const baseAuthURL = "https://auth.nomoreparties.co";
+const baseAuthURL = "http://localhost:3000";
 
 //регистрация нового пользователя
 export const register = (email, password) => {
@@ -59,7 +60,6 @@ export const getContent = (token) => {
   return fetch(`${baseAuthURL}/users/me`, {
     method: 'GET',
     headers: {
-      'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
     }

@@ -12,7 +12,7 @@ const getAllCards = (req, res, next) => {
 const createCard = (req, res, next) => {
   const { name, link } = req.body;
   Card.create({ name, link, owner: req.user._id })
-    .then((card) => res.send((card)))
+    .then((card) => res.send({card}))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new ValidationError(`Validation error. Please type a right data!`)
@@ -36,29 +36,25 @@ const cardDeleteById = (req, res, next) => {
 };
 
 const addLike = (req, res, next) => {
-  Card.findByIdAndUpdate(
-    req.params.cardId,
-    { $addToSet: { likes: req.user._id } }, // добавить _id в массив, если его там нет
-    { new: true },
+  Card.findByIdAndUpdate( req.params.cardId, { $addToSet: { likes: req.user._id } }, { new: true },
   )
     .orFail(new NotFoundError('Нет карточки с таким id'))
     .then((data) => {
-      res.send((data));
+      console.log(data)
+      res.send(data);
     })
     .catch(next);
 }
 
 
 const deleteLike = (req, res, next) => {
-  Card.findByIdAndUpdate(
-    req.params.cardId,
-    { $pull: { likes: req.user._id } }, // добавить _id в массив, если его там нет
-    { new: true },
-  )
+  Card.findByIdAndUpdate(req.params.cardId,{ $pull: { likes: req.user._id } }, { new: true })
     .orFail(new NotFoundError('Нет карточки с таким id'))
     .then((data) => res.send((data)))
     .catch(next);
 }
+
+
 
 module.exports = {
   getAllCards,

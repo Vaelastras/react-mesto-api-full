@@ -14,6 +14,7 @@ function Header({ onSignOut, email, loggedIn }) {
 
   useEffect(() => {
     handleButtonClick() }
+    // eslint-disable-next-line
     , [])
 
   const layout = (

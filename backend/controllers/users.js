@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken'); // импортируем модуль json
 const ValidationError = require('../errors/ValidationError');
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
+const { NODE_ENV, JWT_SECRET } = process.env;
 
 // запрос всех юзеров
 const getAllUsers = (req, res, next) => {
@@ -34,7 +35,7 @@ const createUser = (req, res, next) => {
   const { name, about, avatar, email, password } = req.body;
   bcrypt.hash(password, 10)
     .then((hash) => {
-      User.findOne({email})
+      User.findOne({ email })
         .then((user) => {
 
           if (!user) {
@@ -54,15 +55,17 @@ const login = (req, res, next) => {
   const {email, password} = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, 'some-secret-key', { expiresIn: '7d' });
+      const token = jwt.sign({ _id: user._id },
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
+        { expiresIn: '7d' });
       res.send({ token });
     })
     .catch(next);
 };
 
-
+// получение себя
 const getUserInfo = (req, res, next) => {
-  User.findById(req.param._id)
+  User.findById(req.user)
     .then((user) => {
       if (!user) {
         throw new NotFoundError('That user doesn\'t exist')
@@ -72,10 +75,48 @@ const getUserInfo = (req, res, next) => {
     .catch(next)
 }
 
+// обновление информации пользователя
+const updateUserInfo = (req, res, next) => {
+  const { name, about } = req.body;
+  User.findByIdAndUpdate(req.user._id, { name, about },{
+    new: true,
+    runValidators: true,
+  })
+    .then((updateUser) => {
+      res.send((updateUser));
+    })
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        throw new ValidationError('Please type a right data!');
+      }
+      next(err);
+    });
+};
+
+//обновление своей аватарки
+const updateUserAvatar = (req, res, next) => {
+  const { avatar } = req.body;
+  User.findByIdAndUpdate(req.user._id, { avatar }, {
+    new: true,
+    runValidators: true,
+  })
+    .then((userNewAvatar) => {
+      res.send((userNewAvatar));
+    })
+    .catch((err) => {
+      if (err.name === 'ValidationError') {
+        throw new ValidationError('Ошибка валидации');
+      }
+      next(err);
+    });
+}
+
 module.exports = {
   getAllUsers,
   getUserById,
   createUser,
   login,
-  getUserInfo
+  getUserInfo,
+  updateUserInfo,
+  updateUserAvatar
 };

@@ -20,7 +20,8 @@
   // получение начальных данных от пользователя
   getUserInfo() { // Запрос на загрузку данных пользователя
     return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._headers
+      headers: this._headers,
+
     })
     .then(this._handleResponse)
   }
@@ -30,8 +31,7 @@
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers
-    }
-    )
+    })
     .then(this._handleResponse)
   }
 
@@ -74,18 +74,22 @@
     .then(this._handleResponse)
   }
 
-  //  постановка лаек
-  putLike(id) {
-    return fetch(`${this._baseUrl}/cards/likes/${id}`, {
-      method: 'PUT',
-      headers: this._headers
-      })
-      .then(this._handleResponse)
-  }
+// START DANGERZONE
+
+  putLike({cardId}) {
+    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+      method: "PUT",
+      headers: this._headers,
+    })
+      .then((res) => this._handleResponse);
+  };
+
+
+
 
   // снятие лаека
-  deleteLike(id) {
-    return fetch(`${this._baseUrl}/cards/likes/${id}`, {
+  deleteLike({cardId}) {
+    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: 'DELETE',
       headers: this._headers
       }
@@ -107,8 +111,9 @@
 
 
 export const api = new Api({
-  baseUrl:'https://mesto.nomoreparties.co/v1/cohort-14',
+  // baseUrl:'https://mesto.nomoreparties.co/v1/cohort-14',
+  baseUrl:'http://localhost:3000',
   headers: {
-    authorization: '3cd7525a-bdb0-4a65-a82d-96b8a4b1711a',
+    'Authorization': localStorage.getItem('jwt'),
     'Content-Type': 'application/json'}
 });
