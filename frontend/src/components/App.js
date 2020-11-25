@@ -145,20 +145,8 @@ function App () {
     .catch(err => console.log(err));
   }
 
-
-  // --------- DANGER ZONE!!! ------------------------
-
   function handleCardLike(card) {
-
-    console.log(card, 'hf,jnfq ,kzlnm!')
-
     const isLiked = card.likes.find(i => i === currentUser._id); // tyt false
-    console.log('card.likes',card.likes)
-    console.log('currentUser._id',currentUser._id)
-    console.log('isLiked',isLiked)
-
-
-
 
     if (!isLiked) {
       api.putLike({cardId: card._id})
@@ -177,11 +165,6 @@ function App () {
         .catch(err => console.log(err));
     }
   }
-
-//  --------------- END DANGER ZONE -----------
-
-
-
 
   function handleConfirmCardDelete() {
     const isOwn = cardDelete.owner._id === currentUser._id;
