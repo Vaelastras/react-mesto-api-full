@@ -1,5 +1,5 @@
 // const baseAuthURL = "https://auth.nomoreparties.co";
-const baseAuthURL = "http://localhost:3000";
+const baseAuthURL = "http://api.sealkindom.students.nomoreparties.xyz";
 
 //регистрация нового пользователя
 export const register = (email, password) => {

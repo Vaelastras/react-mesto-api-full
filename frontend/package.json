@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "npm run build && scp -r ./build/* sealkindom@84.201.179.171:/home/sealkindom/news-frontend",
+    "deploy": "npm run build && scp -r ./build/* sealkindom@84.201.155.76:/home/sealkindom/news-frontend",
     "deploy-gh": "gh-pages -d build"
   },
   "eslintConfig": {

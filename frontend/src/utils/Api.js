@@ -21,7 +21,6 @@
   getUserInfo() { // Запрос на загрузку данных пользователя
     return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
-
     })
     .then(this._handleResponse)
   }
@@ -112,7 +111,7 @@
 
 export const api = new Api({
   // baseUrl:'https://mesto.nomoreparties.co/v1/cohort-14',
-  baseUrl:'http://localhost:3000',
+  baseUrl:'http://api.sealkindom.students.nomoreparties.xyz',
   headers: {
     'Authorization': localStorage.getItem('jwt'),
     'Content-Type': 'application/json'}

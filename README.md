@@ -1,7 +1,7 @@
 # Проект Место!
 
-_[Ссылка на фронт](http://www.vaelastras.students.nomoreparties.co/)_  
-_[Ссылка на бэк](http://api.vaelastras.students.nomoreparties.co/)_  
+_[Ссылка на фронт](http://www.sealkindom.students.nomoreparties.xyz/)_  
+_[Ссылка на бэк](http://api.sealkindom.students.nomoreparties.xyz/)_  
 
 ---
 ## Описание проекта
