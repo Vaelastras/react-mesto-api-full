@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken'); // импортируем модуль json
 const ValidationError = require('../errors/ValidationError');
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
+require('dotenv').config();
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 // запрос всех юзеров
@@ -41,8 +42,10 @@ const createUser = (req, res, next) => {
           if (!user) {
             User.create({name, about, avatar, email, password: hash})
               .then((user) => res.send(user))
-            }
+            } else {
             throw new ConflictError('Email already exist')
+          }
+
 
         })
         .catch(next)

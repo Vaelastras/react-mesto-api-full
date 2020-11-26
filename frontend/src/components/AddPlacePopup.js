@@ -35,7 +35,7 @@ function AddPlacePopup ({isOpen, onClose, onAddPlace}) {
           type="text"
           name="title"
           id="title-input"
-          placeholder="Название"
+          placeholder="Название (не более 30 символов)"
           minLength="1"
           maxLength="30"
           required

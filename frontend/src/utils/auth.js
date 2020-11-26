@@ -1,4 +1,5 @@
-const baseAuthURL = "http://api.sealkindom.students.nomoreparties.xyz";
+// const baseAuthURL = "http://api.sealkindom.students.nomoreparties.xyz";
+const baseAuthURL = "http://localhost:3000";
 
 //регистрация нового пользователя
 export const register = (email, password) => {
@@ -8,18 +9,12 @@ export const register = (email, password) => {
     body: JSON.stringify({ password, email })
   })
     .then((res) => {
-      try {
-        if (res.status !== 400){
-          return res.json();
-        }
-      } catch(err) {
-        throw new Error('Некорректно заполнено одно из полей')
+      if (res.status !== 409) {
+        return res.json();
+      } else {
+        return Promise.reject(res.status);
       }
     })
-    .then((res) => {
-      return res;
-    })
-    .catch((err) => console.log({message: "Некорректно заполнено одно из полей"}));
 };
 
 // авторизация существующего пользователя

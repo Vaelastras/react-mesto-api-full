@@ -48,7 +48,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser, isLoading}) {
           type="text"
           name="name"
           id="name-input"
-          placeholder="Введите имя"
+          placeholder="Введите имя (не более 30 символов)"
           minLength="2"
           maxLength="40"
           pattern="[a-zA-Zа-яёА-ЯЁ\s-]*"
@@ -62,7 +62,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser, isLoading}) {
           type="text"
           name="about"
           id="about-input"
-          placeholder="Введите профессию"
+          placeholder="Введите профессию (не более 30 символов)"
           minLength="2"
           maxLength="200"
           required

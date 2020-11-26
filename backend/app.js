@@ -7,11 +7,11 @@ const routes = require('./routes/index');
 const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const {celebrate, Joi} = require('celebrate');
-const {cors} = require('cors')
+const cors = require('cors')
 
 const { PORT = 3000 } = process.env;
 const app = express();
-app.use(require('cors')())
+app.use(cors())
 
 require('dotenv').config();
 

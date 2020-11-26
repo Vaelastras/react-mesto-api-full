@@ -4,8 +4,8 @@
     this._headers = headers;
   }
 
-  getInfoFromServer() {
-    return Promise.all([this.getUserInfo(),this.getInitialCards()])
+  getInfoFromServer(token) {
+    return Promise.all([this.getUserInfo(token),this.getInitialCards(token)])
   }
 
   // обработчик респонсов сервера
@@ -18,28 +18,40 @@
   }
 
   // получение начальных данных от пользователя
-  getUserInfo() { // Запрос на загрузку данных пользователя
+  getUserInfo(token) { // Запрос на загрузку данных пользователя
     return fetch(`${this._baseUrl}/users/me`, {
-      headers: this._headers,
+      headers: {
+        // 'Authorization': localStorage.getItem('jwt'),
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
     })
     .then(this._handleResponse)
   }
 
 
   // получение серверных карточек
-  getInitialCards() {
+  getInitialCards(token) {
     return fetch(`${this._baseUrl}/cards`, {
-      headers: this._headers
+      headers: {
+        // 'Authorization': localStorage.getItem('jwt'),
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
     })
     .then(this._handleResponse)
   }
 
   //установка данных профиля
-  patchUserProfile(data) {
+  patchUserProfile(data, token) {
     return fetch(`${this._baseUrl}/users/me`,
       {
         method: 'PATCH',
-        headers: this._headers,
+        headers: {
+          // 'Authorization': localStorage.getItem('jwt'),
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
           name: data.name,
           about: data.about
@@ -50,10 +62,14 @@
 
 
   // смена аватары
-  patchAvatar(avatar) {
+  patchAvatar(avatar, token) {
     return fetch(`${this._baseUrl}/users/me/avatar`,  {
       method: 'PATCH',
-      headers: this._headers,
+      headers: {
+        // 'Authorization': localStorage.getItem('jwt'),
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
         avatar: avatar.avatar
       })
@@ -61,10 +77,14 @@
       .then(this._handleResponse)
   }
 
- postUserCard(item) {
+ postUserCard(item, token) {
   return fetch(`${this._baseUrl}/cards`,  {
     method: 'POST',
-    headers: this._headers,
+    headers: {
+      // 'Authorization': localStorage.getItem('jwt'),
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify({
         name: item.name,
         link: item.link
@@ -75,10 +95,14 @@
 
 // START DANGERZONE
 
-  putLike({cardId}) {
+  putLike({cardId}, token) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: "PUT",
-      headers: this._headers,
+      headers: {
+      // 'Authorization': localStorage.getItem('jwt'),
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+    }
     })
       .then((res) => this._handleResponse(res));
   };
@@ -87,20 +111,28 @@
 
 
   // снятие лаека
-  deleteLike({cardId}) {
+  deleteLike({cardId}, token) {
     return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers
+      headers: {
+        // 'Authorization': localStorage.getItem('jwt'),
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
       }
     )
       .then(this._handleResponse)
   }
 
   // удалить карточку
-  deleteCard(id) {
+  deleteCard(id, token) {
     return fetch(`${this._baseUrl}/cards/${id}`,  {
       method: 'DELETE',
-      headers: this._headers
+      headers: {
+        // 'Authorization': localStorage.getItem('jwt'),
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
       }
     )
       .then(this._handleResponse)
@@ -111,8 +143,6 @@
 
 export const api = new Api({
   // baseUrl:'https://mesto.nomoreparties.co/v1/cohort-14',
-  baseUrl:'http://api.sealkindom.students.nomoreparties.xyz',
-  headers: {
-    'Authorization': localStorage.getItem('jwt'),
-    'Content-Type': 'application/json'}
+  // baseUrl:'http://api.sealkindom.students.nomoreparties.xyz',
+  baseUrl:'http://localhost:3000'
 });

@@ -44,6 +44,7 @@ function App () {
   //user-email header show
   const [email, setEmail] = useState('')
 
+  const [token, setToken] = useState('');
 
   const history = useHistory();
 
@@ -51,12 +52,13 @@ function App () {
     const jwt = localStorage.getItem('jwt');
 
     if (jwt) {
+      setToken(jwt);
       auth.getContent(jwt)
         .then((res) => {
           if (res) {
-            setEmail(res.email);
             setLoggedIn(true);
-            history.push('./');
+            setEmail(res.email);
+            history.push('/');
           }
         })
         .catch(err => {
@@ -74,14 +76,14 @@ function App () {
   // effects block code
   useEffect(() => {
     if (loggedIn){
-      api.getInfoFromServer()
+      api.getInfoFromServer(token)
         .then(([userData, initialCards]) => {
           setCurrentUser(userData)
           setCards(initialCards)
       })
       .catch(err => console.log(err));
     }
-  }, [loggedIn])
+  }, [loggedIn, token])
 
   useEffect(()=> {
     document.addEventListener('keydown', handleEscapeClose)
@@ -124,7 +126,7 @@ function App () {
  // fetch handlers
   function handleUpdateUser(data) {
     setIsLoading(true)
-    api.patchUserProfile(data)
+    api.patchUserProfile(data, token)
       .then((res) => {
         setCurrentUser(res)
         setIsLoading(false)
@@ -135,7 +137,7 @@ function App () {
   }
   function handleUpdateAvatar(data) {
     setIsLoading(true)
-    api.patchAvatar(data)
+    api.patchAvatar(data, token)
       .then((res) => {
         setCurrentUser(res)
         setIsLoading(false)
@@ -149,7 +151,7 @@ function App () {
     const isLiked = card.likes.find(i => i === currentUser._id); // tyt false
 
     if (!isLiked) {
-      api.putLike({cardId: card._id})
+      api.putLike({cardId: card._id}, token)
         .then((newCard) => {
           const newCards = cards.map((c) => c._id === card._id ? newCard : c)
 
@@ -157,7 +159,7 @@ function App () {
         })
         .catch(err => console.log(err));
     } else {
-      api.deleteLike({cardId: card._id})
+      api.deleteLike({cardId: card._id}, token)
         .then((newCard) => {
           const newCards = cards.map((c) => c._id === card._id ? newCard : c)
           setCards(newCards)
@@ -169,7 +171,7 @@ function App () {
   function handleConfirmCardDelete() {
     const isOwn = cardDelete.owner._id === currentUser._id;
     setIsLoading(true)
-    api.deleteCard(cardDelete._id, !isOwn)
+    api.deleteCard(cardDelete._id, !isOwn, token)
       .then((newCard) => {
                 // Обновляем стейт
         setCards(cards.filter((c) => c._id === cardDelete._id ? !newCard : c));
@@ -185,7 +187,7 @@ function App () {
   }
 
   function handleAddPlaceSubmit(item){
-    api.postUserCard(item)
+    api.postUserCard(item, token)
       .then((res) => {
         setCards([...cards, res.card]);
         closeAllPopups()
@@ -202,15 +204,12 @@ const handleRegisterConfirm = (foo) => {
  const handleRegister = (email, password) => {
    auth.register(email, password)
      .then((res) => {
-       if (res) {
          handleRegisterConfirm(true)
          history.push('./sign-in')
-       } else {
-         handleRegisterConfirm(false);
        }
-     })
+     )
      .catch((err) => {
-       console.log(err.message)
+       handleRegisterConfirm(false)
      })
  }
 
@@ -218,9 +217,10 @@ const handleRegisterConfirm = (foo) => {
     auth.authorize(email, password)
       .then(data => {
         if (data.token) {
-          setEmail(email)
-          setLoggedIn(true)
-          history.push('/')
+          setToken(data.token);
+          setEmail(email);
+          setLoggedIn(true);
+          history.push('/');
         }
       })
       .catch(err => console.log(err.name, err.message))
