@@ -79,4 +79,4 @@ v.**0.1**
 Frontend: http://www.vaelastras.students.nomoreparties.co/   
 Backend: http://api.vaelastras.students.nomoreparties.co/
 
-Ip: 84.201.179.171
+Ip: 84.201.155.76
