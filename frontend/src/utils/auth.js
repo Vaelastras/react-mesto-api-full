@@ -1,4 +1,3 @@
-// const baseAuthURL = "https://auth.nomoreparties.co";
 const baseAuthURL = "http://api.sealkindom.students.nomoreparties.xyz";
 
 //регистрация нового пользователя
