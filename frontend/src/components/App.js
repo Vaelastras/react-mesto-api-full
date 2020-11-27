@@ -204,10 +204,11 @@ const handleRegisterConfirm = (foo) => {
  const handleRegister = (email, password) => {
    auth.register(email, password)
      .then((res) => {
+       if (res) {
          handleRegisterConfirm(true)
          history.push('./sign-in')
        }
-     )
+     })
      .catch((err) => {
        handleRegisterConfirm(false)
      })

@@ -1,6 +1,7 @@
 const baseAuthURL = "http://api.sealkindom.students.nomoreparties.xyz";
 // const baseAuthURL = "http://localhost:3000";
 
+
 //регистрация нового пользователя
 export const register = (email, password) => {
   return fetch(`${baseAuthURL}/signup`, {
