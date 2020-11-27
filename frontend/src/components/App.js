@@ -211,6 +211,7 @@ const handleRegisterConfirm = (foo) => {
      })
      .catch((err) => {
        handleRegisterConfirm(false)
+       console.log(err.message)
      })
  }
 
