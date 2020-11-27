@@ -145,5 +145,5 @@ export const api = new Api({
   // baseUrl:'https://mesto.nomoreparties.co/v1/cohort-14',
   // baseUrl:'http://api.sealkindom.students.nomoreparties.xyz',
   // baseUrl:'http://localhost:3000'
-  baseUrl: `${window.location.protocol}${process.env.API_URL}`
+  baseUrl: `${window.location.protocol}${process.env.API_URL || '//localhost:3000'}`
 });
