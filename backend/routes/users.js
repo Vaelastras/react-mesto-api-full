@@ -19,7 +19,7 @@ router.get('/users/me',
 //получение 1го юзера по ид
 router.get('/users/:userId', celebrate({
   body: Joi.object().keys({
-    _id: Joi.string().length(24),
+    _id: Joi.string().length(24).hex(),
   }),
 }), getUserById);
 

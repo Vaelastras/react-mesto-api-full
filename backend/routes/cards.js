@@ -10,14 +10,14 @@ router.get('/cards', getAllCards);
 router.post('/cards', celebrate({
   body: Joi.object().keys({
     name: Joi.string().max(30).min(2).required(),
-    link: Joi.string().required(),
+    link: Joi.string().required().pattern(/^((http|https):\/\/)(www\.)?([\w\W\d]{1,})(\.)([a-zA-Z]{1,10})([\w\W\d]{1,})?$/),
   })
 }), createCard);
 
 //удаление конкретной карты по ид
 router.delete('/cards/:cardId', celebrate({
   params: Joi.object().keys({
-    cardId: Joi.string().length(24),
+    cardId: Joi.string().length(24).hex(),
   }),
 }), cardDeleteById);
 
@@ -25,7 +25,7 @@ router.delete('/cards/:cardId', celebrate({
 router.put('/cards/likes/:cardId',
   celebrate({
   params: Joi.object().keys({
-    cardId: Joi.string().length(24),
+    cardId: Joi.string().length(24).hex(),
   }),
 }),
   addLike)
