@@ -3,7 +3,6 @@ const { celebrate, Joi } = require('celebrate');
 const {
   getAllCards, createCard, cardDeleteById, addLike, deleteLike,
 } = require('../controllers/cards');
-// const { validatorLink } = require('../middlewares/validator');
 
 // получение всех карт
 router.get('/cards', getAllCards);
