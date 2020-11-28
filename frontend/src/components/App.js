@@ -53,12 +53,13 @@ function App () {
 
     if (jwt) {
       setToken(jwt);
+
       auth.getContent(jwt)
         .then((res) => {
           if (res) {
             setLoggedIn(true);
             setEmail(res.email);
-            history.push('/');
+            history.push('./');
           }
         })
         .catch(err => {
@@ -73,7 +74,6 @@ function App () {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  // effects block code
   useEffect(() => {
     if (loggedIn){
       api.getInfoFromServer(token)
@@ -169,11 +169,10 @@ function App () {
   }
 
   function handleConfirmCardDelete() {
-    const isOwn = cardDelete.owner._id === currentUser._id;
+    const isOwn = cardDelete.owner === currentUser._id;
     setIsLoading(true)
-    api.deleteCard(cardDelete._id, !isOwn, token)
+    api.deleteCard(cardDelete._id, token, !isOwn)    
       .then((newCard) => {
-                // Обновляем стейт
         setCards(cards.filter((c) => c._id === cardDelete._id ? !newCard : c));
         setIsLoading(false)
         closeAllPopups()
