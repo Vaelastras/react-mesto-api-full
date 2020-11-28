@@ -3,6 +3,7 @@ const { celebrate, Joi } = require('celebrate');
 const {
   getAllCards, createCard, cardDeleteById, addLike, deleteLike,
 } = require('../controllers/cards');
+const { validatorLink } = require('../middlewares/validator');
 
 // получение всех карт
 router.get('/cards', getAllCards);
@@ -11,7 +12,7 @@ router.get('/cards', getAllCards);
 router.post('/cards', celebrate({
   body: Joi.object().keys({
     name: Joi.string().max(30).min(2).required(),
-    link: Joi.string().required().pattern(/^((http|https):\/\/)(www\.)?([\w\W\d]{1,})(\.)([a-zA-Z]{1,10})([\w\W\d]{1,})?$/),
+    link: Joi.string().required().custom(validatorLink),
   }),
 }), createCard);
 
