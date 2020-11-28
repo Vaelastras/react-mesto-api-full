@@ -1,10 +1,11 @@
-const bcrypt = require('bcryptjs'); // импортируем bcrypt
+const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-const jwt = require('jsonwebtoken'); // импортируем модуль jsonwebtoken
 const ValidationError = require('../errors/ValidationError');
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
 require('dotenv').config();
+
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 // запрос всех юзеров
@@ -19,13 +20,13 @@ const getUserById = (req, res, next) => {
   User.findById(req.params.userId)
     .then((user) => {
       if (!user) {
-        throw new NotFoundError('Oops, that user doesn\'t exist')
+        throw new NotFoundError('Oops, that user doesn\'t exist');
       }
       return res.send({ data: user });
     })
     .catch((err) => {
       if (err.name === 'CastError') {
-        throw new ValidationError('Please type a right data!')
+        throw new ValidationError('Please type a right data!');
       }
       next(err);
     });
@@ -33,29 +34,31 @@ const getUserById = (req, res, next) => {
 
 // создание нового пользователя
 const createUser = (req, res, next) => {
-  const { name, about, avatar, email, password } = req.body;
+  const {
+    name, about, avatar, email, password,
+  } = req.body;
   bcrypt.hash(password, 10)
     .then((hash) => {
       User.findOne({ email })
         .then((user) => {
-
           if (!user) {
-            User.create({name, about, avatar, email, password: hash})
-              .then((user) => res.send(user))
-            } else {
-            throw new ConflictError('Email already exist')
+            User.create({
+              name, about, avatar, email, password: hash,
+            })
+              // eslint-disable-next-line no-shadow
+              .then((user) => res.send(user));
+          } else {
+            throw new ConflictError('Email already exist');
           }
-
-
         })
-        .catch(next)
+        .catch(next);
     })
     .catch(next);
-}
+};
 
 // вход в систему
 const login = (req, res, next) => {
-  const {email, password} = req.body;
+  const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign({ _id: user._id },
@@ -71,17 +74,17 @@ const getUserInfo = (req, res, next) => {
   User.findById(req.user)
     .then((user) => {
       if (!user) {
-        throw new NotFoundError('That user doesn\'t exist')
+        throw new NotFoundError('That user doesn\'t exist');
       }
       res.send(user);
     })
-    .catch(next)
-}
+    .catch(next);
+};
 
 // обновление информации пользователя
 const updateUserInfo = (req, res, next) => {
   const { name, about } = req.body;
-  User.findByIdAndUpdate(req.user._id, { name, about },{
+  User.findByIdAndUpdate(req.user._id, { name, about }, {
     new: true,
     runValidators: true,
   })
@@ -96,7 +99,7 @@ const updateUserInfo = (req, res, next) => {
     });
 };
 
-//обновление своей аватарки
+// обновление своей аватарки
 const updateUserAvatar = (req, res, next) => {
   const { avatar } = req.body;
   User.findByIdAndUpdate(req.user._id, { avatar }, {
@@ -112,7 +115,7 @@ const updateUserAvatar = (req, res, next) => {
       }
       next(err);
     });
-}
+};
 
 module.exports = {
   getAllUsers,
@@ -121,5 +124,5 @@ module.exports = {
   login,
   getUserInfo,
   updateUserInfo,
-  updateUserAvatar
+  updateUserAvatar,
 };

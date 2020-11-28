@@ -1,20 +1,19 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const { login, createUser } = require('./controllers/users')
+const { errors } = require('celebrate');
+const { celebrate, Joi } = require('celebrate');
+const cors = require('cors');
+const { login, createUser } = require('./controllers/users');
 const auth = require('./middlewares/auth');
 const routes = require('./routes/index');
-const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const {celebrate, Joi} = require('celebrate');
-const cors = require('cors')
 
 const { PORT = 3000 } = process.env;
 const app = express();
-app.use(cors())
+app.use(cors());
 
 require('dotenv').config();
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,12 +32,11 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-
 app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().email().required(),
-    password: Joi.string().required().min(8)
-  })
+    password: Joi.string().required().min(8),
+  }),
 }), login);
 
 app.post('/signup', celebrate({
@@ -47,7 +45,7 @@ app.post('/signup', celebrate({
     about: Joi.string().max(30).min(2),
     avatar: Joi.string().pattern(/^((http|https):\/\/)(www\.)?([\w\W\d]{1,})(\.)([a-zA-Z]{1,10})([\w\W\d]{1,})?$/),
     email: Joi.string().email().required(),
-    password: Joi.string().required().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/).min(8)
+    password: Joi.string().required().pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/).min(8),
   }).unknown(true),
 }), createUser);
 
@@ -58,16 +56,15 @@ app.use(errorLogger); // подключаем логгер ошибок
 
 app.use(errors()); // обработчик ошибок celebrate
 
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, next) => {
-  // если у ошибки нет статуса, выставляем 500
   const { statusCode = 500, message } = err;
   res.status(statusCode).send({
-      // проверяем статус и выставляем сообщение в зависимости от него
-      message: statusCode === 500
-        ? 'На сервере произошла ошибка'
-        : message
-    });
+    message: statusCode === 500
+      ? 'На сервере произошла ошибка'
+      : message,
+  });
 });
 
-
+// eslint-disable-next-line no-console
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
