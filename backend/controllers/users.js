@@ -46,7 +46,12 @@ const createUser = (req, res, next) => {
               name, about, avatar, email, password: hash,
             })
               // eslint-disable-next-line no-shadow
-              .then((user) => res.send(user));
+              .then((user) => res.send({
+                name: user.name,
+                about: user.about,
+                avatar: user.avatar,
+                email: user.email,
+              }));
           } else {
             throw new ConflictError('Email already exist');
           }
